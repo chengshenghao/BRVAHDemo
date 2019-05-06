@@ -63,5 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+        //添加列表加载动画  默认提供5种方法（渐显、缩放、从下到上，从左到右、从右到左）
+        homeAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_LEFT);
     }
 }
