@@ -22,6 +22,9 @@ public class HomeAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, String item) {
-        helper.setText(R.id.tv_text, item);
+        helper.setText(R.id.tv_text, item)
+                .setText(R.id.tv_child, item + "点击我啊")
+                .addOnClickListener(R.id.tv_child)
+                .addOnLongClickListener(R.id.tv_child);
     }
 }
