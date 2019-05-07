@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.tcsl.brvahdemo.adapter.HomeAdapter;
+import com.tcsl.brvahdemo.bean.MultipleItem;
 
 import java.util.ArrayList;
 
@@ -21,13 +22,20 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MultipleItem multipleItem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<MultipleItem> list = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
-            list.add("s" + i);
+            if (i > 10) {
+                multipleItem = new MultipleItem(1);
+            } else {
+                multipleItem = new MultipleItem(2);
+            }
+            list.add(multipleItem);
         }
         HomeAdapter homeAdapter = new HomeAdapter(list);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv);
